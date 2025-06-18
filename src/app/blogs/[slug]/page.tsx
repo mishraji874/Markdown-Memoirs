@@ -29,7 +29,7 @@ export async function generateMetadata(
     authors: post.author ? [{ name: post.author }] : undefined,
     keywords: post.tags,
     openGraph: {
-        title: `${post.title} | Markdown Memoirs`, 
+        title: `${post.title} | Aditya Mishra`, 
         description: post.excerpt,
         type: 'article',
         publishedTime: post.date,

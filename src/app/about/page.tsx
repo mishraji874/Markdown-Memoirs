@@ -7,7 +7,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Aditya Mishra',
+  title: 'About | Aditya Mishra',
   description: 'Learn more about Aditya Mishra, Web3 Wizard & Full Stack Developer.',
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto py-8 space-y-12">
       <section className="text-center">
         <Image
-          src="https://placehold.co/200x200.png"
+          src="https://png.pngtree.com/png-vector/20220815/ourmid/pngtree-young-man-programmer-working-on-computer-with-code-on-screen-png-image_5870394.png"
           alt="Aditya Mishra's profile picture"
           width={200}
           height={200}
@@ -45,7 +45,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold">Bachelor of Technology (B.Tech)</h3>
                 <p className="text-sm">SRM Institute of Science and Technology</p>
-                <p className="text-xs text-muted-foreground">Current</p>
+                <p className="text-xs text-muted-foreground">2021 - 2025</p>
               </div>
             </CardContent>
           </Card>

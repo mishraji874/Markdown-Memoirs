@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Markdown Memoirs',
     template: '%s | Markdown Memoirs',
   },
-  description: 'A personal blog for thoughts and writings.',
+  description: 'A personal blog for thoughts and writings by Aditya Mishra.',
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)" />
       </head>
-      <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
+      <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground" suppressHydrationWarning={true}>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"

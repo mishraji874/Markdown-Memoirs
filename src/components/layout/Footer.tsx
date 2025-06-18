@@ -7,15 +7,15 @@ export default function Footer() {
   return (
     <footer className="bg-secondary/50 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
-        <p>&copy; {currentYear} Markdown Memoirs. All rights reserved.</p>
+        <p>&copy; {currentYear} Made with ❤️ by Aditya Mishra. All rights reserved.</p>
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-          <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">
+          <Link href="https://www.github.com/mishraji874" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">
             <Github className="h-5 w-5" />
           </Link>
-          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors">
+          <Link href="https://www.linkedin.com/in/aditya-mishra-a76237226" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors">
             <Linkedin className="h-5 w-5" />
           </Link>
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-primary transition-colors">
+          <Link href="https://x.com/mishraji874_eth" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-primary transition-colors">
             <Twitter className="h-5 w-5" />
           </Link>
         </div>
