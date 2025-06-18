@@ -41,7 +41,7 @@ Welcome to **Markdown Memoirs**, a personal blog platform built with Next.js, Re
 
 2.  **Navigate to the project directory:**
     ```bash
-    cd your-project-name
+    cd Markdown-Memoirs
     ```
 
 3.  **Install dependencies:**
