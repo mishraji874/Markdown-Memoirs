@@ -5,6 +5,8 @@ slug: "exploring-nextjs"
 excerpt: "A deep dive into the features and benefits of the Next.js App Router for modern web development. Learn about Server Components, file-based routing, and more."
 tags: ["Next.js", "React", "Web Development", "JavaScript", "App Router"]
 author: "Jane Doe"
+featured: true
+featuredImage: "https://placehold.co/600x300.png"
 ---
 
 ## Introduction to Next.js App Router

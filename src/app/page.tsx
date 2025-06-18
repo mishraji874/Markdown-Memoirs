@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { ArrowRight, BookOpen, UserCircle, Rss } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,12 +8,13 @@ import BlogCard from "@/components/BlogCard";
 import { getSortedPostsData, type BlogPost } from "@/lib/blogs";
 
 export const metadata: Metadata = {
-  title: 'Home', // This will be "Home | Markdown Memoirs" due to layout template
+  title: 'Home', 
 };
 
 export default function Home() {
   const allPosts = getSortedPostsData();
   const latestPosts = allPosts.slice(0, 3);
+  const featuredPost = allPosts.find(post => post.featured);
 
   return (
     <div className="space-y-12">
@@ -40,29 +41,42 @@ export default function Home() {
       </section>
 
       <section className="grid md:grid-cols-2 gap-8 items-center">
-        <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
+        <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
           <CardHeader>
             <div className="flex items-center gap-3 mb-2">
               <BookOpen className="w-8 h-8 text-accent" />
-              <CardTitle className="text-3xl text-primary font-headline">Featured Content</CardTitle>
+              <CardTitle className="text-3xl text-primary font-headline">
+                {featuredPost ? featuredPost.title : "Featured Content"}
+              </CardTitle>
             </div>
             <CardDescription className="text-lg">
-              Handpicked articles to get you started.
+              {featuredPost ? featuredPost.excerpt : "Handpicked articles to get you started."}
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <p className="text-foreground/90 mb-4">
-              Our blog covers a wide range of topics, from technology deep dives to creative writing insights. There's something for everyone.
-            </p>
+          <CardContent className="flex-grow">
+            {!featuredPost && (
+              <p className="text-foreground/90 mb-4">
+                Our blog covers a wide range of topics, from technology deep dives to creative writing insights. There's something for everyone.
+              </p>
+            )}
             <Image
-              src="https://placehold.co/600x400.png"
-              alt="Abstract representation of ideas"
+              src={featuredPost?.featuredImage || "https://placehold.co/600x400.png"}
+              alt={featuredPost ? featuredPost.title : "Abstract representation of ideas"}
               width={600}
-              height={400}
+              height={featuredPost ? 300 : 400} // Adjust height if featured image is different
               className="rounded-lg object-cover w-full"
-              data-ai-hint="knowledge ideas"
+              data-ai-hint={featuredPost ? "technology blog" : "knowledge ideas"}
             />
           </CardContent>
+          {featuredPost && (
+            <CardFooter>
+              <Button variant="link" asChild className="text-accent hover:text-accent/80 p-0">
+                <Link href={`/blogs/${featuredPost.slug}`}>
+                  Read More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardFooter>
+          )}
         </Card>
         <div className="relative h-80 md:h-96">
            <Image

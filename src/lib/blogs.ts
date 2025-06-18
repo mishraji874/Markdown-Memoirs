@@ -14,6 +14,8 @@ export interface BlogPost {
   content: string; // Raw markdown content
   tags?: string[];
   author?: string;
+  featured?: boolean;
+  featuredImage?: string;
 }
 
 export function getSortedPostsData(): BlogPost[] {
@@ -52,6 +54,8 @@ export function getSortedPostsData(): BlogPost[] {
         content: matterResult.content,
         tags: matterResult.data.tags || [],
         author: matterResult.data.author || 'Anonymous',
+        featured: matterResult.data.featured || false,
+        featuredImage: matterResult.data.featuredImage || undefined,
       } as BlogPost;
     });
 
@@ -107,6 +111,8 @@ export function getPostData(slug: string): BlogPost | null {
       content: matterResult.content,
       tags: matterResult.data.tags || [],
       author: matterResult.data.author || 'Anonymous',
+      featured: matterResult.data.featured || false,
+      featuredImage: matterResult.data.featuredImage || undefined,
     } as BlogPost;
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error);
