@@ -103,6 +103,7 @@ export default {
       typography: (theme: (path: string) => string) => ({
         DEFAULT: {
           css: {
+            // Base text colors (these will use light mode HSL vars by default)
             '--tw-prose-body': theme('colors.foreground'),
             '--tw-prose-headings': theme('colors.primary.DEFAULT'),
             '--tw-prose-lead': theme('colors.foreground'),
@@ -114,13 +115,52 @@ export default {
             '--tw-prose-quotes': theme('colors.primary.DEFAULT'),
             '--tw-prose-quote-borders': theme('colors.accent.DEFAULT'),
             '--tw-prose-captions': theme('colors.muted.foreground'),
-            '--tw-prose-code': theme('colors.accent.DEFAULT'),
-            '--tw-prose-pre-code': theme('colors.accent.foreground'),
-            '--tw-prose-pre-bg': theme('colors.secondary.DEFAULT'),
             '--tw-prose-th-borders': theme('colors.border'),
             '--tw-prose-td-borders': theme('colors.border'),
-            '--tw-prose-invert-body': theme('colors.background'), // Example, adjust for dark mode if needed
-            // ... other prose styles
+
+            // Code colors (inline and block)
+            '--tw-prose-code': theme('colors.accent.DEFAULT'),      // Inline code text color
+            '--tw-prose-pre-code': theme('colors.accent.foreground'),// Code block text color
+            '--tw-prose-pre-bg': theme('colors.secondary.DEFAULT'),  // Code block background color
+
+            // Explicit styling for inline code's background, padding, radius.
+            // The plugin doesn't offer dedicated CSS vars for these inline code visual aspects.
+            'code:not(pre > code)': {
+              backgroundColor: theme('colors.muted'), 
+              color: theme('colors.accent.DEFAULT'), // Ensure inline code text color is also set here if not via --tw-prose-code
+              padding: '0.2em 0.4em',
+              borderRadius: '0.25rem', // sm
+              fontWeight: '500', 
+            },
+
+            // --- Invert colors for dark mode ---
+            // When .dark .prose-invert is active, these variables are used.
+            // They correctly reference theme tokens which have their HSL values changed by globals.css .dark {}
+            '--tw-prose-invert-body': theme('colors.foreground'),
+            '--tw-prose-invert-headings': theme('colors.primary.DEFAULT'),
+            '--tw-prose-invert-lead': theme('colors.foreground'),
+            '--tw-prose-invert-links': theme('colors.accent.DEFAULT'),
+            '--tw-prose-invert-bold': theme('colors.foreground'),
+            '--tw-prose-invert-counters': theme('colors.muted.foreground'),
+            '--tw-prose-invert-bullets': theme('colors.muted.foreground'),
+            '--tw-prose-invert-hr': theme('colors.border'),
+            '--tw-prose-invert-quotes': theme('colors.primary.DEFAULT'),
+            '--tw-prose-invert-quote-borders': theme('colors.accent.DEFAULT'),
+            '--tw-prose-invert-captions': theme('colors.muted.foreground'),
+            '--tw-prose-invert-th-borders': theme('colors.border'),
+            '--tw-prose-invert-td-borders': theme('colors.border'),
+            
+            // Inverted code colors
+            '--tw-prose-invert-code': theme('colors.accent.DEFAULT'),      // Inline code text (dark mode version of accent)
+            '--tw-prose-invert-pre-code': theme('colors.accent.foreground'),// Code block text (dark mode version)
+            '--tw-prose-invert-pre-bg': theme('colors.secondary.DEFAULT'),  // Code block background (dark mode version)
+
+            // Explicit inverted styling for inline code background, etc.
+            '.prose-invert code:not(pre > code)': {
+              backgroundColor: theme('colors.muted'), // Uses dark mode muted
+              color: theme('colors.accent.DEFAULT'), // Uses dark mode accent for text
+              // padding, borderRadius, fontWeight will be inherited if not specified again
+            },
           },
         },
       }),

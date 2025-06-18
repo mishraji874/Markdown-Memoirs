@@ -23,15 +23,13 @@ export async function generateMetadata(
     };
   }
 
-  // The title set here will be used with the template from layout.tsx
-  // For OpenGraph or other specific meta tags, you can be more explicit if needed.
   return {
     title: post.title, 
     description: post.excerpt,
     authors: post.author ? [{ name: post.author }] : undefined,
     keywords: post.tags,
     openGraph: {
-        title: `${post.title} | Markdown Memoirs`, // Explicit full title for OG
+        title: `${post.title} | Markdown Memoirs`, 
         description: post.excerpt,
         type: 'article',
         publishedTime: post.date,
@@ -87,7 +85,7 @@ export default function BlogPostPage({ params }: Props) {
         )}
       </header>
       
-      <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-headline prose-headings:text-primary prose-a:text-accent prose-strong:text-foreground/90 prose-code:font-code prose-code:text-accent-foreground prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-blockquote:border-accent prose-blockquote:text-muted-foreground">
+      <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-headline prose-headings:text-primary prose-a:text-accent prose-strong:text-foreground/90 prose-code:font-code prose-blockquote:border-accent prose-blockquote:text-muted-foreground">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}
