@@ -23,13 +23,15 @@ export async function generateMetadata(
     };
   }
 
+  // The title set here will be used with the template from layout.tsx
+  // For OpenGraph or other specific meta tags, you can be more explicit if needed.
   return {
-    title: `${post.title} - Markdown Memoirs`,
+    title: post.title, 
     description: post.excerpt,
     authors: post.author ? [{ name: post.author }] : undefined,
     keywords: post.tags,
     openGraph: {
-        title: post.title,
+        title: `${post.title} | Markdown Memoirs`, // Explicit full title for OG
         description: post.excerpt,
         type: 'article',
         publishedTime: post.date,
@@ -84,12 +86,6 @@ export default function BlogPostPage({ params }: Props) {
           </div>
         )}
       </header>
-
-      {/* Optional: Add a placeholder for a cover image if you plan to use it
-      <div className="mb-8 aspect-video relative">
-        <Image src="https://placehold.co/1200x675" alt={`Cover image for ${post.title}`} layout="fill" objectFit="cover" className="rounded-lg shadow-lg" data-ai-hint="article technology" />
-      </div>
-      */}
       
       <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-headline prose-headings:text-primary prose-a:text-accent prose-strong:text-foreground/90 prose-code:font-code prose-code:text-accent-foreground prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-blockquote:border-accent prose-blockquote:text-muted-foreground">
         <ReactMarkdown

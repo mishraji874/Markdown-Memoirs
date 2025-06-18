@@ -6,7 +6,10 @@ import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: 'Markdown Memoirs',
+  title: {
+    default: 'Markdown Memoirs',
+    template: '%s | Markdown Memoirs',
+  },
   description: 'A personal blog for thoughts and writings.',
 };
 

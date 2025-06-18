@@ -7,7 +7,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Aditya Mishra - Markdown Memoirs',
+  title: 'About Aditya Mishra',
   description: 'Learn more about Aditya Mishra, Web3 Wizard & Full Stack Developer.',
 };
 
