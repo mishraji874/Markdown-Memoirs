@@ -1,4 +1,4 @@
-# Markdown Memoirs
+# Markdown Memoirs - A Personal Blog Website
 
 Welcome to **Markdown Memoirs**, a personal blog platform built with Next.js, React, Tailwind CSS, and ShadCN UI components. This project allows for easy creation and display of blog posts written in Markdown.
 
