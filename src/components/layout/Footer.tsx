@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Globe, Github, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -9,6 +9,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
         <p>&copy; {currentYear} Made with ❤️ by Aditya Mishra. All rights reserved.</p>
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+        <Link href="https://mishraji874eth.on.fleek.co/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio Website">
+              <Globe className="h-6 w-6" />
+            </Link>
           <Link href="https://www.github.com/mishraji874" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">
             <Github className="h-5 w-5" />
           </Link>

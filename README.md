@@ -35,6 +35,9 @@ Welcome to **Markdown Memoirs**, a personal blog platform built with Next.js, Re
 ### Installation
 
 1.  **Clone the repository (if applicable) or ensure you have the project files.**
+   ```bash
+   git clone https://www.github.com/Markdown-Memoirs.git
+   ```
 
 2.  **Navigate to the project directory:**
     ```bash

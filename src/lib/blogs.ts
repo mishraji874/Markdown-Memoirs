@@ -18,7 +18,9 @@ export interface BlogPost {
   featuredImage?: string;
 }
 
-export function getSortedPostsData(): BlogPost[] {
+export function getSortedPostsData(options?: { order?: 'asc' | 'desc' }): BlogPost[] {
+  const sortOrder = options?.order || 'desc'; // Default to newest first
+
   let fileNames: string[];
   try {
     fileNames = fs.readdirSync(postsDirectory);
@@ -60,10 +62,12 @@ export function getSortedPostsData(): BlogPost[] {
     });
 
   return allPostsData.sort((a, b) => {
-    if (new Date(a.date) < new Date(b.date)) {
-      return 1;
-    } else {
-      return -1;
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    if (sortOrder === 'asc') { // Oldest first
+      return dateA - dateB;
+    } else { // Newest first (desc)
+      return dateB - dateA;
     }
   });
 }

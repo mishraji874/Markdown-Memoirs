@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const allPosts = getSortedPostsData();
+  const allPosts = getSortedPostsData({ order: 'desc' }); // Newest first for homepage
   const latestPosts = allPosts.slice(0, 6);
 
   return (
@@ -20,7 +20,7 @@ export default function Home() {
           Welcome to Blogs by Aditya Mishra
         </h1>
         <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
-        Discover insightful articles about Web3 Development, Blockchain Technology, Smart Contract Security, Web development, programming best practices, and software engineering.
+          Discover insightful articles about Web3 Development, Blockchain Technology, Smart Contract Security, Web development, programming best practices, and software engineering.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-all hover:shadow-xl transform hover:scale-105">
@@ -65,9 +65,9 @@ export default function Home() {
       )}
 
       {latestPosts.length === 0 && (
-         <section className="text-center py-10">
-            <p className="text-xl text-muted-foreground">No blog posts found yet. Check back soon!</p>
-         </section>
+        <section className="text-center py-10">
+          <p className="text-xl text-muted-foreground">No blog posts found yet. Check back soon!</p>
+        </section>
       )}
     </div>
   );

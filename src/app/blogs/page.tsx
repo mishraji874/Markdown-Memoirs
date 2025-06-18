@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogsPage() {
-  const allPosts = getSortedPostsData();
+  const allPosts = getSortedPostsData({ order: 'asc' }); // Oldest first
 
   if (allPosts.length === 0) {
     return (
