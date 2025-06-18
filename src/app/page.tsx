@@ -1,20 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { ArrowRight, BookOpen, UserCircle, Rss } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Rss, UserCircle } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import BlogCard from "@/components/BlogCard";
-import { getSortedPostsData, type BlogPost } from "@/lib/blogs";
+import { getSortedPostsData } from "@/lib/blogs";
 
 export const metadata: Metadata = {
-  title: 'Home', 
+  title: 'Home',
 };
 
 export default function Home() {
   const allPosts = getSortedPostsData();
-  const latestPosts = allPosts.slice(0, 3);
-  const featuredPost = allPosts.find(post => post.featured);
+  const latestPosts = allPosts.slice(0, 6);
 
   return (
     <div className="space-y-12">
@@ -40,56 +37,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-2">
-              <BookOpen className="w-8 h-8 text-accent" />
-              <CardTitle className="text-3xl text-primary font-headline">
-                {featuredPost ? featuredPost.title : "Featured Content"}
-              </CardTitle>
-            </div>
-            <CardDescription className="text-lg">
-              {featuredPost ? featuredPost.excerpt : "Handpicked articles to get you started."}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-grow">
-            {!featuredPost && (
-              <p className="text-foreground/90 mb-4">
-                Our blog covers a wide range of topics, from technology deep dives to creative writing insights. There's something for everyone.
-              </p>
-            )}
-            <Image
-              src={featuredPost?.featuredImage || "https://placehold.co/600x400.png"}
-              alt={featuredPost ? featuredPost.title : "Abstract representation of ideas"}
-              width={600}
-              height={featuredPost ? 300 : 400} // Adjust height if featured image is different
-              className="rounded-lg object-cover w-full"
-              data-ai-hint={featuredPost ? "technology blog" : "knowledge ideas"}
-            />
-          </CardContent>
-          {featuredPost && (
-            <CardFooter>
-              <Button variant="link" asChild className="text-accent hover:text-accent/80 p-0">
-                <Link href={`/blogs/${featuredPost.slug}`}>
-                  Read More <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          )}
-        </Card>
-        <div className="relative h-80 md:h-96">
-           <Image
-              src="https://placehold.co/600x450.png"
-              alt="Person writing or thinking"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg shadow-xl"
-              data-ai-hint="writing creativity"
-            />
-        </div>
-      </section>
-
       {latestPosts.length > 0 && (
         <section className="space-y-8 py-12">
           <div className="text-center">
@@ -106,7 +53,7 @@ export default function Home() {
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>
-          {allPosts.length > 3 && (
+          {allPosts.length > 6 && (
             <div className="text-center mt-10">
               <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md transition-all hover:shadow-lg transform hover:scale-105">
                 <Link href="/blogs">
@@ -116,6 +63,12 @@ export default function Home() {
             </div>
           )}
         </section>
+      )}
+
+      {latestPosts.length === 0 && (
+         <section className="text-center py-10">
+            <p className="text-xl text-muted-foreground">No blog posts found yet. Check back soon!</p>
+         </section>
       )}
     </div>
   );
