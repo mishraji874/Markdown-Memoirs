@@ -1,3 +1,70 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, BookOpen, UserCircle } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="space-y-12">
+      <section className="text-center py-12 md:py-20">
+        <h1 className="text-5xl md:text-6xl font-bold font-headline text-primary mb-6 leading-tight">
+          Welcome to Markdown Memoirs
+        </h1>
+        <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+          Discover inspiring articles, in-depth tutorials, and personal reflections.
+          Dive into a world of ideas crafted with care.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-all hover:shadow-xl transform hover:scale-105">
+            <Link href="/blogs">
+              Explore Blogs <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="border-primary text-primary hover:bg-primary/10 shadow-lg transition-all hover:shadow-xl transform hover:scale-105">
+            <Link href="/about">
+              About The Author <UserCircle className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      <section className="grid md:grid-cols-2 gap-8 items-center">
+        <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <CardHeader>
+            <div className="flex items-center gap-3 mb-2">
+              <BookOpen className="w-8 h-8 text-accent" />
+              <CardTitle className="text-3xl text-primary font-headline">Featured Content</CardTitle>
+            </div>
+            <CardDescription className="text-lg">
+              Handpicked articles to get you started.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-foreground/90 mb-4">
+              Our blog covers a wide range of topics, from technology deep dives to creative writing insights. There's something for everyone.
+            </p>
+            <Image
+              src="https://placehold.co/600x400.png"
+              alt="Abstract representation of ideas"
+              width={600}
+              height={400}
+              className="rounded-lg object-cover w-full"
+              data-ai-hint="knowledge ideas"
+            />
+          </CardContent>
+        </Card>
+        <div className="relative h-80 md:h-96">
+           <Image
+              src="https://placehold.co/600x450.png"
+              alt="Person writing or thinking"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg shadow-xl"
+              data-ai-hint="writing creativity"
+            />
+        </div>
+      </section>
+    </div>
+  );
 }
