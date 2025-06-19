@@ -3,7 +3,7 @@ import { getSortedPostsData } from '@/lib/blogs';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'All Blogs | Aditya Mishra',
+  title: 'All Blogs',
   description: 'Browse all blog posts from Markdown Memoirs.',
 };
 

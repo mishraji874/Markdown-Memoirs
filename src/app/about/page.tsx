@@ -5,9 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import image from '../image.jpg';
 
 export const metadata: Metadata = {
-  title: 'About | Aditya Mishra',
+  title: 'About',
   description: 'Learn more about Aditya Mishra, Web3 Wizard & Full Stack Developer.',
 };
 
@@ -18,11 +19,11 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto py-8 space-y-12">
       <section className="text-center">
         <Image
-          src="https://png.pngtree.com/png-vector/20220815/ourmid/pngtree-young-man-programmer-working-on-computer-with-code-on-screen-png-image_5870394.png"
+          src={image}
           alt="Aditya Mishra's profile picture"
           width={200}
           height={200}
-          className="rounded-full object-cover shadow-md mx-auto mb-6"
+          className="rounded-full object-cover shadow-md mx-auto mb-10"
           data-ai-hint="developer programming"
         />
         <h1 className="text-4xl sm:text-5xl font-bold font-headline text-primary mb-3">

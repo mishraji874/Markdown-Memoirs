@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-secondary/50 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
-        <p>&copy; {currentYear} Made with ❤️ by Aditya Mishra. All rights reserved.</p>
+        <p>&copy; {currentYear} Made with ❤️ by Aditya Mishra | Markdown Memoirs | All rights reserved.</p>
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
         <Link href="https://mishraji874eth.on.fleek.co/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio Website">
               <Globe className="h-6 w-6" />

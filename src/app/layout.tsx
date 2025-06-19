@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 export const metadata: Metadata = {
   title: {
     default: 'Markdown Memoirs',
-    template: '%s | Markdown Memoirs',
+    template: '%s | Markdown Memoirs | Aditya Mishra',
   },
   description: 'A personal blog for thoughts and writings by Aditya Mishra.',
 };

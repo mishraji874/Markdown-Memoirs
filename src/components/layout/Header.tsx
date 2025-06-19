@@ -29,6 +29,7 @@ export default function Header() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary hover:text-primary/80 transition-colors">
             <Feather className="w-7 h-7" />
+            Markdown Memoirs
           </Link>
           <div className="flex items-center space-x-2">
             <div className="hidden md:flex space-x-2">
@@ -50,6 +51,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary hover:text-primary/80 transition-colors">
           <Feather className="w-7 h-7" />
+          Markdown Memoirs
         </Link>
 
         <div className="flex items-center gap-2">
@@ -77,12 +79,13 @@ export default function Header() {
                 <div className="flex flex-col space-y-4">
                   <div className="flex justify-between items-center mb-6">
                     <Link href="/" className="flex items-center gap-2 text-xl font-headline font-bold text-primary">
-                       <Feather className="w-6 h-6" />
+                      <Feather className="w-6 h-6" />
+                      Markdown Memoirs
                     </Link>
                     <SheetClose asChild>
-                       <Button variant="ghost" size="icon" aria-label="Close menu">
-                          <X className="h-5 w-5" />
-                       </Button>
+                      <Button variant="ghost" size="icon" aria-label="Close menu">
+                        <X className="h-5 w-5" />
+                      </Button>
                     </SheetClose>
                   </div>
                   {navLinks.map((link) => (

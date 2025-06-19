@@ -6,7 +6,7 @@ import BlogCard from "@/components/BlogCard";
 import { getSortedPostsData } from "@/lib/blogs";
 
 export const metadata: Metadata = {
-  title: 'Home | Aditya Mishra',
+  title: 'Home | Markdown Memoirs | Aditya Mishra',
 };
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
     <div className="space-y-12">
       <section className="text-center py-12 md:py-20">
         <h1 className="text-5xl md:text-6xl font-bold font-headline text-primary mb-6 leading-tight">
-          Welcome to Blogs by Aditya Mishra
+          Welcome to Markdown Memoirs
         </h1>
         <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed">
           Discover insightful articles about Web3 Development, Blockchain Technology, Smart Contract Security, Web development, programming best practices, and software engineering.
