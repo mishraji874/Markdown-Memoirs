@@ -76,7 +76,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="text-lg text-foreground/90 space-y-4 leading-relaxed prose prose-sm sm:prose-base max-w-none dark:prose-invert prose-a:text-accent prose-strong:font-semibold prose-em:italic">
               <p>
-                🚀 Hey there! I'm <a href="https://mishraji874eth.on.fleek.co/" target="_blank" rel="noopener noreferrer"><strong>Aditya Mishra</strong></a> – <strong><em>a Web3 wizard and Full Stack Developer</em></strong> on a mission to revolutionize the digital world, one line of code at a time.
+                🚀 Hey there! I'm <a href="https://adityamishra-dev.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>Aditya Mishra</strong></a> – <strong><em>a Web3 wizard and Full Stack Developer</em></strong> on a mission to revolutionize the digital world, one line of code at a time.
               </p>
               <p>
                 💻 Whether it's crafting decentralized applications (dApps) that redefine trust or building scalable web platforms that just work, I thrive at the intersection of innovation and impact. With expertise spanning Solidity, blockchain security, and smart contract development, I've helped optimize transaction efficiency, boost user engagement, and slash operational costs for projects that matter.
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </h2>
         <div className="flex justify-center space-x-4 sm:space-x-6">
           <Button variant="outline" size="icon" asChild className="border-primary text-primary hover:bg-primary/10 transition-colors transform hover:scale-110">
-            <Link href="https://mishraji874eth.on.fleek.co/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio Website">
+            <Link href="https://adityamishra-dev.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio Website">
               <Globe className="h-6 w-6" />
             </Link>
           </Button>
