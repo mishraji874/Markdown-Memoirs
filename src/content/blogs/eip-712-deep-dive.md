@@ -1,6 +1,6 @@
 ---
 title: "Unlocking Ethereum’s Potential: A Deep Dive into EIP-712"
-date: "2024-06-30"
+date: "2025-06-30"
 slug: "eip-712-deep-dive"
 excerpt: "Explore Ethereum Improvement Proposal 712 (EIP-712), a standard that has revolutionized Ethereum’s approach to digital signatures and data handling, enhancing security and transparency."
 tags: ["Ethereum", "Web3", "EVM", "EIP", "Smart Contracts", "Digital Signatures", "NFTs"]
