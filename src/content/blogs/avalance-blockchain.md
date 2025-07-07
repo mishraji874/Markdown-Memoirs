@@ -1,7 +1,7 @@
 ---
 title: "Avalanche Blockchain: Scaling Web3 with Subnets and Super-Fast dApps"
 date: "2025-07-07"
-slug: "avalanche-blockchain-dapps"
+slug: "avalanche-blockchain"
 excerpt: "Explore Avalanche, a high-performance Layer 1 blockchain offering near-instant finality, modularity, and the ability to create custom blockchains or subnets, ideal for modern dApps."
 tags: ["Avalanche", "Blockchain", "dApps", "Scalability", "Subnets", "EVM", "Web3"]
 author: "Aditya Mishra"
