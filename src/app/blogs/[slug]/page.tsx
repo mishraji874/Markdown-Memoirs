@@ -15,7 +15,8 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = getPostData(params.slug);
+  const { slug } = await params;
+  const post = getPostData(slug);
 
   if (!post) {
     return {
@@ -46,8 +47,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getPostData(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getPostData(slug);
 
   if (!post) {
     notFound();

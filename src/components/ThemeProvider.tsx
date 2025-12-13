@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from 'react';
+import type { ReactNode, JSX } from 'react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import type { ThemeProviderProps } from 'next-themes/dist/types';
 
